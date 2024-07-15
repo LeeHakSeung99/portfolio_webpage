@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation styles */
+nav {
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #555;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #777;
+}
+
+/* Main content styles */
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="date"],
+form select {
+    width: calc(100% - 80px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form button[type="submit"],
+form input[type="reset"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #555;
+}
+</style>
+<body>
+    <header>
+        <h1>회원가입 페이지</h1>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="introduce.html">소개</a>
+            <a href="projects.html">프로젝트</a>
+            <a href="contact.html">연락처</a>
+        </nav>
+    </header>
+    <main>
+        <form action="submit" method="get">
+            <label for="id">* 아이디</label>
+            <input type="text" name="id" id="id" required>
+            <br>
+            <label for="password">* 비밀번호</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <label for="username">* 이름</label>
+            <input type="text" name="username" id="username" required minlength="2" maxlength="10" pattern="^[가-힣]+$">
+            <br>
+            <label for="year">* 생년월일</label>
+            <input type="radio" name="calendar" id="radio1" checked>
+            <label for="radio1">양</label>
+            <input type="radio" name="calendar" id="radio2">
+            <label for="radio2">음</label>
+            <br>
+            <input type="date" name="year" id="year" required>
+            <br>
+            <label for="phone">* 휴대전화</label>
+            <br>
+            <select name="phone_prefix" id="phone">
+                <option value="010">010</option>
+                <option value="011">011</option>
+            </select> 
+            <input type="text" name="num2" id="num2" pattern="\d{7,8}" required>
+            <br>
+            <label for="email">* 이메일</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <input type="checkbox" name="option3" id="option3" value="check1">
+            <label for="option3">이메일을 수신합니다.</label>
+            <br>
+            <input type="checkbox" name="option4" id="option4" value="check2">
+            <label for="option4">SMS을 수신합니다.</label>
+            <br>
+            <button type="submit">제출</button>
+            <input type="reset" value="초기화">
+        </form>
+    </main>
+</body>
+</html>
